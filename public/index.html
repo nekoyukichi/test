@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Realtime Chat</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="bar">
+      <div class="left">
+        <strong>Realtime Chat</strong>
+        <span id="status" class="muted">接続中...</span>
+      </div>
+      <div class="right">
+        <input id="name" type="text" placeholder="あなたの名前" />
+        <span id="online" class="pill">-</span>
+      </div>
+    </header>
+
+    <main id="messages"></main>
+
+    <footer class="inputbar">
+      <textarea id="input" rows="1" placeholder="メッセージを入力して Enter で送信（Shift+Enterで改行）"></textarea>
+      <button id="send">送信</button>
+    </footer>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
