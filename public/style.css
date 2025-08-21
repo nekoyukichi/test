@@ -5,10 +5,19 @@
 .left strong{margin-right:8px} .muted{color:var(--muted)} .ok{color:var(--acc)} .warn{color:var(--warn)}
 .pill{margin-left:8px;padding:2px 8px;border:1px solid var(--line);border-radius:999px;color:var(--muted)}
 #name{background:#0a0f1c;color:var(--text);border:1px solid var(--line);border-radius:8px;padding:8px 10px;min-width:160px}
-#messages{padding:12px;overflow:auto}
-.msg{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px;margin:8px 0}
-.msg .meta{display:flex;justify-content:space-between;color:var(--muted);font-size:12px;margin-bottom:6px}
+#messages{padding:12px;overflow:auto;background:#0a0f1c}
 .notice{color:var(--muted);text-align:center;margin:10px 0}
+
+/* LINE-like bubbles */
+.msg{display:flex;gap:8px;margin:10px 0;align-items:flex-end}
+.msg.other{justify-content:flex-start}
+.msg.mine{justify-content:flex-end}
+.avatar{width:32px;height:32px;border-radius:50%;background:#1f2937;display:flex;align-items:center;justify-content:center;color:#cbd5e1;font-weight:700;flex:0 0 auto}
+.bubble{max-width:70%;background:#1f2937;border:1px solid var(--line);border-radius:12px;padding:8px 10px;position:relative}
+.msg.mine .bubble{background:#22c55e;color:#04110a;border-color:#16a34a}
+.bubble .author{font-size:12px;color:#cbd5e1;margin-bottom:4px}
+.bubble .body{white-space:pre-wrap;word-break:break-word}
+.bubble .time{font-size:11px;color:#9ca3af;text-align:right;margin-top:4px}
 .inputbar{display:flex;gap:8px;align-items:flex-end;padding:12px;border-top:1px solid var(--line);background:var(--card);position:sticky;bottom:0}
 #input{flex:1;resize:none;background:#0a0f1c;color:var(--text);border:1px solid var(--line);border-radius:10px;padding:10px;min-height:40px;max-height:160px}
 button{background:var(--acc);color:#04110a;border:none;padding:10px 14px;border-radius:10px;font-weight:700;cursor:pointer}

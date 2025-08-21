@@ -35,6 +35,7 @@ wss.on('connection', (ws) => {
   const me = { id: uid(), name: `Guest-${Math.floor(Math.random()*1000)}` };
   clients.set(ws, me);
 
+  ws.send(JSON.stringify({ type:'hello', id: me.id, name: me.name }));
   ws.send(JSON.stringify({ type:'system', text:'接続しました。名前は右上で変更できます。' }));
   broadcast({ type:'presence', online: onlineCount() });
 
