@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Mini Trip Planner</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Mini Trip Planner</h1>
+      <p class="subtitle">行程・持ち物・予算をサクッと管理</p>
+    </header>
+
+    <section class="card">
+      <h2>旅行情報</h2>
+      <div class="grid grid-2">
+        <label>目的地
+          <input id="dest" type="text" placeholder="例: 京都 / Paris">
+        </label>
+        <label>総予算（任意）
+          <input id="budgetCap" type="number" min="0" step="1000" placeholder="例: 50000">
+        </label>
+        <label>開始日
+          <input id="startDate" type="date">
+        </label>
+        <label>終了日
+          <input id="endDate" type="date">
+        </label>
+      </div>
+      <div class="info-row">
+        <span id="tripDays">旅行日数: -</span>
+        <a id="mapsLink" href="#" target="_blank" rel="noopener">地図を開く</a>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="section-header">
+        <h2>行程</h2>
+        <button id="addPlan" class="btn">＋ 予定を追加</button>
+      </div>
+      <div id="plans"></div>
+    </section>
+
+    <section class="card">
+      <div class="section-header">
+        <h2>持ち物</h2>
+        <div class="row">
+          <input id="newItem" type="text" placeholder="アイテムを入力">
+          <button id="addItem" class="btn">追加</button>
+        </div>
+      </div>
+      <div id="packList"></div>
+    </section>
+
+    <section class="card">
+      <div class="section-header">
+        <h2>予算</h2>
+        <div class="row">
+          <input id="expName" type="text" placeholder="項目">
+          <input id="expCat" type="text" placeholder="カテゴリ（交通/宿/食 など）">
+          <input id="expAmt" type="number" min="0" step="100" placeholder="金額">
+          <button id="addExp" class="btn">追加</button>
+        </div>
+      </div>
+      <div id="expenses"></div>
+      <div class="budget-summary">
+        <span>合計支出: <strong id="totalSpent">0</strong></span>
+        <span>残り予算: <strong id="remainBudget">-</strong></span>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>メモ</h2>
+      <textarea id="notes" rows="6" placeholder="予約番号・気になるスポットなど"></textarea>
+    </section>
+
+    <section class="card">
+      <div class="row wrap">
+        <button id="exportBtn" class="btn">JSONエクスポート</button>
+        <label class="btn btn-ghost">
+          JSONインポート
+          <input id="importFile" type="file" accept="application/json" hidden>
+        </label>
+        <button id="clearBtn" class="btn btn-danger">全データ削除</button>
+        <span id="savedAt" class="muted"></span>
+      </div>
+    </section>
+
+    <footer>
+      <small>データはこの端末のローカルに自動保存されます。</small>
+    </footer>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
